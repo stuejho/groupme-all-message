@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Message{% endblock %}
+{% block head %}
+  {{ super() }}
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/util.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/check-form.js') }}"></script>
+{% endblock %}
+{% block body %}
+  <main class="main-content form-wrapper full-mobile">
+    <h2>{{ app_name_short }}</h2>
+    <form class="message-form" name="message-form" onsubmit="processSubmit(); return false">
+      <label for="groups">
+        Group (only groups where you are admin or owner are shown):
+      </label>
+      <select name="groups" id="groups" class="form-entry form-element gray-rounded-border" required>
+        <option value="none" selected disabled hidden>Loading groups...</option>
+      </select>
+
+      <label for="handle">
+        Custom group mention handle (prepended to your message):
+      </label>
+      <span class="form-entry flex-row form-element-prefixed">
+        <span class="form-element-prefix gray-rounded-border">&commat;</span>
+        <input type="text" name="handle" id="handle" 
+          class="form-element gray-rounded-border" value="group" 
+          required maxlength="9">
+      </span>
+      <!-- <div class="permanent-placeholder" custom-placeholder="@">
+        <input type="text" name="handle" id="handle" 
+          class="form-entry form-element permanent-placeholder-field" value="group" 
+          required maxlength="9">
+      </div> -->
+
+      <label for="message">
+        Message:
+      </label>
+      <!-- Max message length is 1000, so subtract 10 (length of "@handle "
+            to get maxlength. -->
+      <textarea type="text" name="message" id="message" class="form-entry form-element gray-rounded-border" maxlength="900" required></textarea>
+      
+      <label>Preview:</label>
+      <div class="form-entry preview-container flex-column gray-rounded-border">
+        <div class="group-banner flex-row">
+          <img src="https://cdn.groupme.com/assets/avatars/default-group.preview.png?version=1624622267" id="group-image" width="30" height="30">
+          <h5 id="groupname">Select a group</h5>
+        </div>
+        <div class="message-preview flex-row">
+          <img src="https://cdn.groupme.com/assets/avatars/default-user.preview.png?version=1624622267" id="user-image"  width="30" height="30">
+          <div class="flex-column message-content">
+            <h6 id="nickname">Name</h6>
+            <p id="message-preview-text"><b>&commat;group</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-center-container">
+        <input type="submit" id="submit" value="Send" class="form-entry form-element btn btn-medium full-mobile" disabled>
+      </div>
+    </form>
+    <p class="notice">powered by GroupMe&reg;</p>
+  </main>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    
+    <title>{{ app_name }}</title>
+    
+    <!-- Flask automatically adds a static view that takes a path relative to 
+         the flaskr/static directory and serves it. -->
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    
+    <!-- Meta viewport tag to enable correct viewport on mobile devices -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body class="noscroll">
+    <main class="flex-column flex-full-height flex-justify-center sign-in-background">
+      <div class="sign-in-cluster">
+        <h2>{{ app_name_short }}</h2>
+        <div class="sign-in-container full-mobile child-margin-bottom-normal">
+          <p>Ever want send a message mentioning <b>everyone</b> in a GroupMe group?</p>
+          <p>With Group Mention, it's easy as 1, 2, 3!</p>
+          <ol class="big-number-list">
+            <li>
+              Authenticate with GroupMe by signing in.
+              <div class="big-centered-emoji">&#9000;</div>
+            </li>
+            <li>
+              Pick a group where you&apos;re an admin or owner.
+              <div class="big-centered-emoji">&#128081;</div>
+            </li>
+            <li>
+              Send your message.
+              <div class="big-centered-emoji">&#128232;</div>
+            </li>
+          </ol>
+          <a
+            href="https://oauth.groupme.com/oauth/authorize?client_id=vMd7saYx555riexPmh4RmvyZrz6VMGwQQIwK1nLtr3ezBxod" 
+            class="btn btn-large btn-groupme-green">
+            Sign In
+          </a>
+        </div>
+        <p class="notice">powered by GroupMe&reg;</p>
+      </div>
+      
+      <div class="anim">
+        <div class="anim-profile-pic anim-profile-pic-md" id="pp0"></div>
+        <div class="anim-profile-pic anim-profile-pic-sm" id="pp1"></div>
+        <div class="anim-profile-pic anim-profile-pic-xs" id="pp2"></div>
+        <div class="anim-profile-pic anim-profile-pic-xl" id="pp3"></div>
+        <div class="anim-profile-pic anim-profile-pic-lg" id="pp4"></div>
+        <div class="anim-profile-pic anim-profile-pic-md" id="pp5"></div>
+        <div class="anim-profile-pic anim-profile-pic-sm" id="pp6"></div>
+        <div class="anim-profile-pic anim-profile-pic-xs" id="pp7"></div>
+        <div class="anim-profile-pic anim-profile-pic-md" id="pp8"></div>
+        <div class="anim-profile-pic anim-profile-pic-xl" id="pp9"></div>
+      </div>
+    </main>
+    <!-- Fix Chromium bug that causes CSS transitions to fire when form 
+         elements are present.
+         https://bugs.chromium.org/p/chromium/issues/detail?id=332189   -->
+    <script> </script>
+  </body>
+</html>
