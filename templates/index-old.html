@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    
+    <title>{{ app_name }}</title>
+    
+    <!-- Flask automatically adds a static view that takes a path relative to 
+         the flaskr/static directory and serves it. -->
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    
+    <!-- Meta viewport tag to enable correct viewport on mobile devices -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <main class="flex-row flex-full-height">
+      <div class="sign-in-body flex-column full-mobile">
+        <div>
+          <div class="header child-margin-bottom-normal">
+            <h2>{{ app_name }}</h2>
+            <p>
+              <i>Get the word out with a <b>@group</b> mention.</i>
+            </p>
+          </div>
+          <div class="sign-in-area child-margin-bottom-normal">
+            <h3>Sign In</h3>
+            <p>You will be redirected to GroupMe for authentication.</p>
+            <a href="https://oauth.groupme.com/oauth/authorize?client_id=vMd7saYx555riexPmh4RmvyZrz6VMGwQQIwK1nLtr3ezBxod" class="btn btn-large">Sign In</a>
+          </div>
+        </div>
+        <p class="notice">powered by GroupMe&reg;</p>
+      </div>
+      <div class="directions-body flex-column hide-mobile">
+        <div class="flex-column flex-justify-center child-margin-bottom-normal">
+          <h3>
+            Ever want to mention <span class="underline">everyone</span> in a 
+            group?
+          </h3>
+          <h4>With {{ app_name}}, it&apos;s easy as 1, 2, 3!</h4>
+          <ol class="big-number-list">
+            <li>
+              Authenticate with GroupMe by signing in.
+              <!-- <img src="img/groupme-logo.png" id="groupme-logo"> -->
+            </li>
+            <li>
+              Pick a group where you&apos;re an admin or owner.
+              <div id="group-select-example"></div>
+            </li>
+            <li>
+              Send your message.
+              <div id="message-send-example"></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </main>
+    <!-- Fix Chromium bug that causes CSS transitions to fire when form 
+         elements are present.
+         https://bugs.chromium.org/p/chromium/issues/detail?id=332189   -->
+    <script> </script>
+  </body>
+</html>

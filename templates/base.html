@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    
+    <!-- Meta viewport tag to enable correct viewport on mobile devices -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>{% block title %} {% endblock %} | {{ app_name }}</title>
+    
+    <!-- Flask automatically adds a static view that takes a path relative to 
+         the flaskr/static directory and serves it. -->
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    {% endblock %}
+  </head>
+  <body class="body-background">
+    {% include "header.html" %}
+    {% block body %}
+    {% endblock %}
+    <!-- Fix Chromium bug that causes CSS transitions to fire when form 
+         elements are present.
+         https://bugs.chromium.org/p/chromium/issues/detail?id=332189   -->
+    <script> </script>
+  </body>
+</html>
