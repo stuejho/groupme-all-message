@@ -182,6 +182,12 @@ i {
   font-size: 1.25em;
 }
 
+@media only screen and (max-width: 667px) {
+  .sign-in-container > p {
+    font-size: 1rem;
+  }
+}
+
 .sign-in-container > *:last-child {
   margin-bottom: 0;
 }
@@ -436,6 +442,13 @@ textarea {
 .big-number-list > li {
   list-style-position: inside;
   font-size: 1.25em;
+}
+
+@media only screen and (max-width: 667px) {
+  .big-number-list > li {
+    list-style-position: inside;
+    font-size: 1em;
+  }
 }
 
 .big-number-list > li::marker{
