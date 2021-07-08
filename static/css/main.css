@@ -114,8 +114,20 @@ i {
   text-decoration: underline;
 }
 
+/* Scrolling */
+
 .noscroll {
   overflow: hidden; /* Hide scrollbars */
+}
+
+.noscroll-on-desktop {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 667px) {
+  .noscroll-on-desktop {
+    overflow: visible ;
+  }
 }
 
 /* Flex layouts */
