@@ -132,6 +132,9 @@ i {
 
 .flex-justify-center {
   justify-content: center;
+}
+
+.flex-align-center {
   align-items: center;
   text-align: center;
 }
