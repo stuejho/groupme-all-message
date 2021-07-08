@@ -182,8 +182,8 @@ i {
   margin-bottom: 0;
 }
 
-.big-centered-emoji {
-  font-size: 4rem;
+.sign-in-icon {
+  display: block !important;
   text-align: center;
 }
 
