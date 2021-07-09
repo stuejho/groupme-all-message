@@ -329,6 +329,10 @@ i {
   flex-direction: column;
 }
 
+.main-content > * {
+  margin-bottom: 1rem;
+}
+
 .notice {
   font-size: 0.85rem;
   text-align: center;
@@ -336,16 +340,8 @@ i {
 
 /* Message form */
 
-.form-wrapper > *:last-child {
-  margin-top: auto;
-}
-
 .message-form {
   box-sizing: border-box;
-}
-
-.form-wrapper > h2 {
-  margin-bottom: 1rem;
 }
 
 .form-entry {
