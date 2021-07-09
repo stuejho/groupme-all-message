@@ -159,6 +159,28 @@ i {
   height: 100%;
 }
 
+/* Main content styling */
+
+.main-content {
+  box-sizing: border-box;
+  width: 70%;
+  margin: 0 auto;
+  padding: 1.5em;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content > * {
+  margin-bottom: 1rem;
+}
+
+.notice {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+
 /* Main page content */
 
 .sign-in-background {
@@ -317,25 +339,6 @@ i {
 @keyframes spinup {
   from  { transform: translateY(0px); }
   to    { transform: translateY(-150vh) rotate(720deg); }
-}
-
-.main-content {
-  box-sizing: border-box;
-  width: 70%;
-  margin: 0 auto;
-  padding: 1.5em;
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content > * {
-  margin-bottom: 1rem;
-}
-
-.notice {
-  font-size: 0.85rem;
-  text-align: center;
 }
 
 /* Message form */
