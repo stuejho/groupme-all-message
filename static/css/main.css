@@ -511,10 +511,11 @@ textarea {
   /* General appearance */
   border: none;
   border-radius: 5px;
-  color: white;
   display: inline-block;
+  box-sizing: border-box;
   text-decoration: none;
   white-space: nowrap;
+  color: white;
   background-color: #2ECC71;
   transition: background-color 0.15s ease-in-out;
 }
@@ -532,6 +533,14 @@ textarea {
   background-color: #4C7C1C;
 }
 
+.btn-blue {
+  background-color: #2E86C1;
+}
+
+.btn-blue:hover {
+  background-color: #3498DB;
+}
+
 .btn:disabled {
   background-color: #ABEBC6;
   cursor: not-allowed;
@@ -541,12 +550,14 @@ textarea {
   font-size: 1.25em;
   line-height: 1.75em;
   width: 100%;
+  padding: 0.25em;
 }
 
 .btn-medium {
   font-size: 1.1em;
   line-height: 1.5em;
   width: 10em;
+  padding: 0.5em;
 }
 
 .btn-center-container {
