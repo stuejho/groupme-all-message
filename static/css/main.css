@@ -336,11 +336,6 @@ i {
   animation-duration: 15s;
 }
 
-@keyframes spinup {
-  from  { transform: translateY(0px); }
-  to    { transform: translateY(-150vh) rotate(720deg); }
-}
-
 /* Message form */
 
 .message-form {
@@ -550,6 +545,18 @@ textarea {
 
 .btn-center-container {
   text-align: center;
+}
+
+/* Animations */
+
+@keyframes fadein {
+  from  { opacity:0; }
+  to    { opacity:1; }
+}
+
+@keyframes spinup {
+  from  { transform: translateY(0px); }
+  to    { transform: translateY(-150vh) rotate(720deg); }
 }
 
 /* Remove some info on small screens */
