@@ -424,6 +424,12 @@ textarea {
   padding: 1em 0.75em 1em 0;
 }
 
+/* Success page */
+
+.anim-fade {
+  animation: fadein 1s;
+}
+
 /* Child element margins */
 
 .child-margin-bottom-normal > *{
