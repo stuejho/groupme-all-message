@@ -2,10 +2,16 @@
 {% block title %}Success{% endblock %}
 {% block head %}
   {{ super() }}
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 {% endblock %}
 {% block body %}
-<main class="main-content full-mobile">
+<main class="main-content full-mobile flex-column flex-align-center">
   <h2>Message sent</h2>
-  <a href="/message">Send another message</a>
+  <i class="fas fa-check-circle fa-10x anim-fade"></i>
+  <p>Your message has been sent.</p>
+  <a href="/message" class="btn btn-medium btn-blue">Send another</a>
+  <a href="/" class="btn btn-medium btn-blue">Home</a>
 </main>
 {% endblock %}

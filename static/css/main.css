@@ -159,6 +159,28 @@ i {
   height: 100%;
 }
 
+/* Main content styling */
+
+.main-content {
+  box-sizing: border-box;
+  width: 70%;
+  margin: 0 auto;
+  padding: 1.5em;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content > * {
+  margin-bottom: 1rem;
+}
+
+.notice {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+
 /* Main page content */
 
 .sign-in-background {
@@ -314,38 +336,10 @@ i {
   animation-duration: 15s;
 }
 
-@keyframes spinup {
-  from  { transform: translateY(0px); }
-  to    { transform: translateY(-150vh) rotate(720deg); }
-}
-
-.main-content {
-  box-sizing: border-box;
-  width: 70%;
-  margin: 0 auto;
-  padding: 1.5em;
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-}
-
-.notice {
-  font-size: 0.85rem;
-  text-align: center;
-}
-
 /* Message form */
-
-.form-wrapper > *:last-child {
-  margin-top: auto;
-}
 
 .message-form {
   box-sizing: border-box;
-}
-
-.form-wrapper > h2 {
-  margin-bottom: 1rem;
 }
 
 .form-entry {
@@ -430,6 +424,12 @@ textarea {
   padding: 1em 0.75em 1em 0;
 }
 
+/* Success page */
+
+.anim-fade {
+  animation: fadein 1s;
+}
+
 /* Child element margins */
 
 .child-margin-bottom-normal > *{
@@ -511,10 +511,11 @@ textarea {
   /* General appearance */
   border: none;
   border-radius: 5px;
-  color: white;
   display: inline-block;
+  box-sizing: border-box;
   text-decoration: none;
   white-space: nowrap;
+  color: white;
   background-color: #2ECC71;
   transition: background-color 0.15s ease-in-out;
 }
@@ -532,6 +533,14 @@ textarea {
   background-color: #4C7C1C;
 }
 
+.btn-blue {
+  background-color: #2E86C1;
+}
+
+.btn-blue:hover {
+  background-color: #3498DB;
+}
+
 .btn:disabled {
   background-color: #ABEBC6;
   cursor: not-allowed;
@@ -541,16 +550,30 @@ textarea {
   font-size: 1.25em;
   line-height: 1.75em;
   width: 100%;
+  padding: 0.25em;
 }
 
 .btn-medium {
   font-size: 1.1em;
   line-height: 1.5em;
   width: 10em;
+  padding: 0.5em;
 }
 
 .btn-center-container {
   text-align: center;
+}
+
+/* Animations */
+
+@keyframes fadein {
+  from  { opacity:0; }
+  to    { opacity:1; }
+}
+
+@keyframes spinup {
+  from  { transform: translateY(0px); }
+  to    { transform: translateY(-150vh) rotate(720deg); }
 }
 
 /* Remove some info on small screens */
