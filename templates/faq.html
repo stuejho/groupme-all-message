@@ -11,4 +11,16 @@
     </li>
   </ul>
 </main>
+<script>
+  var acc = document.getElementsByClassName("faq-trigger");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("faq-active");
+      var faqContent = this.nextElementSibling;
+      var currMaxHeight = faqContent.style.maxHeight;
+      faqContent.style.maxHeight = currMaxHeight ? null :  faqContent.scrollHeight + "px";
+    });
+  }
+</script>
 {% endblock %}
