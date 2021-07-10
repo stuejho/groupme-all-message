@@ -44,5 +44,10 @@ def success():
     """Route to success.html."""
     return render_template('success.html')
 
+@app.route('/faq')
+def faq():
+    """Route to faq.html."""
+    return render_template('faq.html')
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

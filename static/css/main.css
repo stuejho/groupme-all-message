@@ -430,6 +430,41 @@ textarea {
   animation: fadein 1s;
 }
 
+/* FAQ page */
+
+.faq-item {
+  font-size: 1.25em;
+  margin-bottom: 0.25em;
+}
+
+.faq-trigger {
+  width: 100%;
+  color: #000000;
+  background-color: #AED6F1;
+  font-size: 1em;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.75em 1em;
+  border: none;
+  border-radius: 0.25em;
+  margin-bottom: 0.25em;
+  outline: none;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.faq-trigger:hover {
+  background-color: #D6EAF8;
+}
+
+.faq-content {
+  box-sizing: border-box;
+  padding: 0 1em;
+  background-color: #FFFFFF;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
 /* Child element margins */
 
 .child-margin-bottom-normal > *{
