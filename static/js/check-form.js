@@ -65,6 +65,13 @@ async function processSubmit() {
   let groupId = dropdown.options[dropdown.selectedIndex].value;
   let prefix = "@" + document.getElementById("handle").value + " ";
   let message = document.getElementById("message").value;
+  let prefixedMessage = prefix + message;
+
+  // Exit if message is greater than 1000 characters
+  if (prefixedMessage.length > 1000) {
+    alert("Message cannot be over 990 characters. Refresh the page and try again.");
+    return;
+  }
   
   let accessToken = getAccessToken();
   
@@ -80,7 +87,7 @@ async function processSubmit() {
   let requestData = data = {
     "message": {
       "source_guid": guid,
-      "text" : prefix + message,
+      "text" : prefixedMessage,
       "attachments" : [
         {
           "type" : "mentions",
