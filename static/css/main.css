@@ -434,26 +434,29 @@ textarea {
 
 .faq-item {
   font-size: 1.25em;
+  margin-bottom: 0.5em;
 }
 
 .faq-trigger {
-  background-color: #eee;
+  width: 100%;
   color: #444;
+  background-color: #AED6F1;
+  font-size: 1em;
+  text-align: left;
   cursor: pointer;
   padding: 1em;
-  width: 100%;
   border: none;
-  text-align: left;
+  border-radius: 0.25em;
   outline: none;
-  font-size: 1em;
   transition: background-color 0.15s ease-in-out;
 }
 
-.faq-active, .faq-trigger:hover {
-  background-color: #ccc;
+.faq-trigger:hover {
+  background-color: #D6EAF8;
 }
 
 .faq-content {
+  box-sizing: border-box;
   padding: 0 1em;
   background-color: #FFFFFF;
   max-height: 0;
