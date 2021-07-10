@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+<main class="main-content full-mobile">
+  <h2>{% block title %}FAQ{% endblock %}</h2>
+  <ul class="faq-group">
+    <li class="faq-item">
+      <button class="faq-trigger">Why don't I see all the groups I'm in?</button>
+      <div class="faq-content">
+        <p>You can only send group mentions to groups where you are an admin or owner.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-trigger">How does authentication work?</button>
+      <div class="faq-content">
+        <p>
+          First, you authenticate using GroupMe's OAuth portal. Then, you are 
+          redirected back to this site with an access token. This token is 
+          briefly processed by the site server and then locally stored on your 
+          browser. The stored token is used whenever you send a message. This
+          site does not see your outgoing messages.
+        </p>
+      </div>
+      </li>
+    <li class="faq-item">
+      <button class="faq-trigger">How long can a message be?</button>
+      <div class="faq-content">
+        <p>The maximum message size is 990 characters.</p>
+      </div>
+    </li>
+    <li class="faq-item">
+      <button class="faq-trigger">Can I send images/attachments?</button>
+      <div class="faq-content">
+        <p>Support for sending images/attachments is not supported.</p>
+      </div>
+    </li>
+  </ul>
+</main>
+<script>
+  var acc = document.getElementsByClassName("faq-trigger");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("faq-active");
+      var faqContent = this.nextElementSibling;
+      var currMaxHeight = faqContent.style.maxHeight;
+      faqContent.style.maxHeight = currMaxHeight ? null :  faqContent.scrollHeight + "px";
+    });
+  }
+</script>
+{% endblock %}
