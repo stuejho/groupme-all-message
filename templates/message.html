@@ -10,6 +10,10 @@
 {% block body %}
   <main class="main-content form-wrapper full-mobile">
     <h2>{{ app_name_short }}</h2>
+    <noscript>
+      Warning: Your browser does not support JavaScript! You cannot send
+      messages using Group Mention.
+   </noscript>
     <form class="message-form" name="message-form" onsubmit="processSubmit(); return false">
       <label for="groups">
         Group (only groups where you are admin or owner are shown):
