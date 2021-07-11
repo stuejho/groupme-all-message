@@ -2,14 +2,9 @@
  * Constants
  */
 const BASE_URL = "https://api.groupme.com/v3";
-const ME_URL = BASE_URL + "/users/me"
+const ME_URL = BASE_URL + "/users/me";
 const GROUPS_URL = BASE_URL + "/groups";
 const MAX_PER_PAGE = 15;
-
-/* 
- * Globals
- */
-var submitting = false; // used to prevent duplicate submissions
 
 function readCookie(key) {
 	const tokens = document.cookie.split(';');
