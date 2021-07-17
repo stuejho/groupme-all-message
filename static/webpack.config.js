@@ -1,13 +1,17 @@
 const path = require('path');
-var glob = require("glob");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, 'src/js/main.js'),
+    main: [
+      path.resolve(__dirname, 'src/js/main.js'),
+      path.resolve(__dirname, 'src/css/main.css'),
+    ],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist/js')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/bundle.js',
   },
   module: {
     rules: [
@@ -23,13 +27,31 @@ module.exports = {
                 {
                   'useBuiltIns': 'usage',
                   'corejs': 3,
-                  'targets': '> 1%, not dead'
-                }
-              ]
-            ]
-          }
-        }
-      }
-    ]
-  }
-}
+                  'targets': '> 1%, not dead',
+                },
+              ],
+            ],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+    }),
+  ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
+};
