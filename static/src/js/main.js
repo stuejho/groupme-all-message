@@ -24,4 +24,4 @@ async function init() {
   setGroupDropdown(accessToken, userId);
 }
 
-window.onload = init;:
+window.onload = init;
