@@ -7,9 +7,12 @@
     
     <!-- Flask automatically adds a static view that takes a path relative to 
          the flaskr/static directory and serves it. -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
     
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/main.css') }}" >
     
     <!-- Meta viewport tag to enable correct viewport on mobile devices -->
     <meta name="viewport" content="width=device-width,initial-scale=1">

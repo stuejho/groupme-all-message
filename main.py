@@ -1,4 +1,5 @@
-from flask import Flask, render_template, make_response, request, redirect
+from flask import Flask, render_template, make_response, request, redirect, send_from_directory
+import os
 import datetime
 
 APP_NAME = 'Group Mention for GroupMe'
@@ -14,6 +15,11 @@ APP_KEY_ACCESS_TOKEN = "access_token"
 def inject_stage_and_region():
     """Inject variables using the context processor"""
     return dict(app_name = APP_NAME, app_name_short = APP_NAME_SHORT)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+        'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 def index():
