@@ -1,3 +1,5 @@
+import { getAccessToken, getGroupUserIds, sendMessage } from './util.js';
+
 function isFormIncomplete() {
   // see if any required form elements are empty
   let someEmpty = false;
@@ -57,10 +59,6 @@ function handleFormModification() {
 }
 
 async function processSubmit() {
-  if (submitting) return;
-
-  submitting = true;
-
   let dropdown = document.getElementById("groups");
   let groupId = dropdown.options[dropdown.selectedIndex].value;
   let prefix = "@" + document.getElementById("handle").value + " ";
@@ -74,6 +72,8 @@ async function processSubmit() {
   }
   
   let accessToken = getAccessToken();
+  console.log(groupId);
+  console.log(accessToken);
   
   // Get list of user ids to mention
   let userIds = await getGroupUserIds(groupId, accessToken);
@@ -84,7 +84,7 @@ async function processSubmit() {
   for (let i = 0; i < userIds.length; ++i) {
     loci.push([0, prefix.length]);
   }
-  let requestData = data = {
+  let requestData = {
     "message": {
       "source_guid": guid,
       "text" : prefixedMessage,
@@ -97,6 +97,7 @@ async function processSubmit() {
       ]
     }
   };
+  console.log(requestData);
   
   // Send message
   await sendMessage(groupId, accessToken, requestData);
@@ -110,12 +111,16 @@ $(document).ready(function() {
   // check all elements with the required attribute
   $("*[required]").change(handleFormModification);
   $("*[required]").keyup(handleFormModification);
-});
-
-// Prevent duplicate form submissions
-$("form").submit(function() {
-  $(this).submit(function() {
-    return false;
+  
+  // Prevent duplicate form submissions and set onsubmit action
+  $("form").each(function() {
+    console.log("Submitting");
+    this.submitting = false;
+  }).submit(function(e) {
+    if (!this.submitting) {
+      this.submitting = true;
+      processSubmit();
+      e.preventDefault();
+    }
   });
-  return true;
 });

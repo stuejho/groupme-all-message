@@ -4,8 +4,7 @@
   {{ super() }}
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/util.js') }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename='js/check-form.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='dist/js/bundle.js') }}"></script>
 {% endblock %}
 {% block body %}
   <main class="main-content form-wrapper full-mobile">
@@ -14,7 +13,7 @@
       Warning: Your browser does not support JavaScript! You cannot send
       messages using Group Mention.
    </noscript>
-    <form class="message-form" name="message-form" onsubmit="processSubmit(); return false">
+    <form class="message-form" name="message-form" onsubmit="return false;">
       <label for="groups">
         Group (only groups where you are admin or owner are shown):
       </label>
