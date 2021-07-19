@@ -422,6 +422,7 @@ textarea {
   font-size: 15px;
   line-height: 20px;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .group-banner {
@@ -446,6 +447,7 @@ textarea {
 
 .message-preview .message-content {
   padding: 1em 0.75em 1em 0;
+  max-width: 90%;
 }
 
 /* Success page */
