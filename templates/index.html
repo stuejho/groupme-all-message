@@ -7,9 +7,12 @@
     
     <!-- Flask automatically adds a static view that takes a path relative to 
          the flaskr/static directory and serves it. -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
     
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='dist/css/main.css') }}" >
     
     <!-- Meta viewport tag to enable correct viewport on mobile devices -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,7 +25,7 @@
       <div class="sign-in-cluster">
         <h2>{{ app_name_short }}</h2>
         <div class="sign-in-container full-mobile child-margin-bottom-normal">
-          <p>Ever want send a message mentioning <b>everyone</b> in a GroupMe group?</p>
+          <p>Ever want send a message mentioning</br><b>@everyone</b> or <b>@all</b> in a GroupMe group?</p>
           <p>With Group Mention, it's easy as 1, 2, 3!</p>
           <ol class="big-number-list">
             <li>
@@ -60,6 +63,7 @@
         <div class="anim-profile-pic anim-profile-pic-xl" id="pp9"></div>
       </div>
     </main>
+    <a href="/faq" class="faq-circle">?</a>
     <!-- Fix Chromium bug that causes CSS transitions to fire when form 
          elements are present.
          https://bugs.chromium.org/p/chromium/issues/detail?id=332189   -->

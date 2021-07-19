@@ -183,6 +183,30 @@ i {
 
 /* Main page content */
 
+.faq-circle {
+  position: absolute;
+  z-index: 2;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #B2BABB;
+  color: white;
+  opacity: 0.75;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.faq-circle:hover {
+  opacity: 1.0;
+}
+
 .sign-in-background {
   background-color: #03AFEF;
   background-image: linear-gradient(to bottom right, #03AFEF 0%, #C3E6F4 100%);
@@ -398,6 +422,7 @@ textarea {
   font-size: 15px;
   line-height: 20px;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .group-banner {
@@ -422,6 +447,7 @@ textarea {
 
 .message-preview .message-content {
   padding: 1em 0.75em 1em 0;
+  max-width: 90%;
 }
 
 /* Success page */
