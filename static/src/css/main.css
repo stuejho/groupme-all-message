@@ -124,7 +124,7 @@ i {
   overflow: hidden;
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-height: 667px) {
   .noscroll-on-desktop {
     overflow: visible ;
   }
@@ -159,6 +159,12 @@ i {
   height: 100%;
 }
 
+@media only screen and (max-height: 667px) {
+  .flex-full-height {
+    height: auto;
+  }
+}
+
 /* Main content styling */
 
 .main-content {
@@ -184,7 +190,7 @@ i {
 /* Main page content */
 
 .faq-circle {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   right: 0.5rem;
   bottom: 0.5rem;
@@ -240,7 +246,7 @@ i {
   font-size: 1.25em;
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 812px) {
   .sign-in-container > p {
     font-size: 1rem;
   }
@@ -517,7 +523,7 @@ textarea {
   font-size: 1.25em;
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 812px) {
   .big-number-list > li {
     list-style-position: inside;
     font-size: 1em;
@@ -639,7 +645,7 @@ textarea {
 
 /* Remove some info on small screens */
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 812px) {
   .full-mobile {
     width: 100% !important;
   }
@@ -649,7 +655,7 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 812px) {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans Condensed', 'Arial Narrow', Arial, sans-serif;
   }
