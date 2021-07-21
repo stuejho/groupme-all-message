@@ -576,6 +576,7 @@ textarea {
   vertical-align: middle;
   margin-bottom: 1em;
   /* General appearance */
+  appearance: none;
   border: none;
   border-radius: 5px;
   display: inline-block;
